@@ -1,7 +1,7 @@
 # Shopify-challenge
 replit link: [https://shopify-challenge.diwu9.repl.co/](https://replit.com/@DiWu9/Shopify-challenge)
 
-Please use the following command in the Shell to start the server
+Please use the following command in the Shell to start the server.
 
 
 ```
