@@ -25,7 +25,3 @@ But you can still delete items using the delete icon in each row:
 
 ![image](https://user-images.githubusercontent.com/95495325/169854470-21a8bec2-dffd-481c-8a24-2de4d10bf08c.png)
 
-
-Besides, the pagination is also not enabled:
-
-![image](https://user-images.githubusercontent.com/95495325/169854314-190f9c8a-12cb-47a1-9bbd-66e65364f889.png)
