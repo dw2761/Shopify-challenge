@@ -7,8 +7,6 @@ var path = require('path');
 
 
 
-
-
 const app = express();
 
 app.set("view engine", "ejs");
@@ -16,7 +14,6 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
 mongoose.connect("mongodb+srv://admin:test123@cluster0.8d829.mongodb.net/inventoryDB", {useNewUrlParser: true});
@@ -35,16 +32,7 @@ const itemsSchema = {
 const Item = mongoose.model("Item",itemsSchema);
 
 
-// const item1 = new Item({
-//   index: 1,
-//   name: "test1",
-//   category: "be",
-//   quantity: 10,
-//   description: "this is a test",
-//   status: "in stock"
-// });
-//
-// item1.save();
+
 
 app.get("/", function(req, res){
   Item.find({}, function(err, foundItems){
@@ -96,7 +84,6 @@ res.redirect("/");
 
 app.post("/delete", function(req, res){
   const id = req.body.id;
-  //const button = req.body.button;
   Item.deleteOne({_id: id}, function(err){
     if(err){
       console.log(err);
@@ -109,11 +96,6 @@ app.post("/delete", function(req, res){
 });
 
 
-// app.post("/delete", function(req, res){
-//   console.log(req.body.id);
-//   console.log(req.body.button);
-//   res.redirect("/");
-// });
 
 app.listen(3000, function(){
   console.log("Server started on port 3000.");
