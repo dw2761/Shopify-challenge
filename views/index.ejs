@@ -74,7 +74,12 @@
                 </tbody>
             </table>
 			<div class="clearfix">
+                <% var count = result.totalDocs % 5 %>
+        <% if(result.hasNextPage){ %>  
                 <div class="hint-text">Showing <b>5</b> out of <b><%= result.totalDocs %></b> entries</div>
+        <% }else { %>
+          <div class="hint-text">Showing <b><%=count %></b> out of <b><%= result.totalDocs %></b> entries</div>
+          <% } %>
                 <ul class="pagination">
                 <% if(!result.hasPrevPage){ %>
                   <li class="page-item disabled"><a>Previous</a></li>
