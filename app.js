@@ -12,6 +12,7 @@ const app = express();
 
 app.set("view engine", "ejs");
 
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
@@ -104,8 +105,26 @@ app.post("/delete", function(req, res){
   res.redirect("/");
 });
 
+app.post("/delete-many", function(req, res){
+  console.log(req.body);
+
+  console.log("hello");
+  // Item.deleteMany(
+  //   {
+  //     _id: {
+  //       $in: id
+  //     }
+  //   }, function(err){
+  //   if(err){
+  //     console.log(err);
+  //   }else{
+  //     console.log("Successfully deleted the documents!");
+  //   }
+  // });
+
+  res.redirect("/");
+});
 
 app.listen(3000, function(){
   console.log("Server started on port 3000.");
 });
-
